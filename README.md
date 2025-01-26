@@ -44,7 +44,7 @@ Installation
 
 Usage
 
-    Launch the application using npm start or the pre-built executable (if available).
+    Launch the application using npm start.
 
     Use the app to add transactions, view summaries, or export data.
 
