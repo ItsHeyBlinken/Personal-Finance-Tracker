@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Form Styles */
+.form-group {
+    margin: 10px 0;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+}
+
+select, input {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Transaction List Styles */
+.transaction-list {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.expense-list {
+    list-style: none;
+    padding: 0;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.expense-item:hover {
+    background-color: #e9ecef;
+}
+
+.expense-details {
+    flex-grow: 1;
+}
+
+.expense-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.expense-actions button {
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #ffd700;
+    color: black;
+}
+
+.delete-btn {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.expense-controls {
+    margin-bottom: 15px;
+}
+
+.recent-total {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Category Colors */
+.category-Housing { border-left: 4px solid #ff9999; }
+.category-Utilities { border-left: 4px solid #99ff99; }
+.category-Transportation { border-left: 4px solid #9999ff; }
+.category-Groceries { border-left: 4px solid #ffff99; }
+.category-DiningOut { border-left: 4px solid #ff99ff; }
+.category-Entertainment { border-left: 4px solid #99ffff; }
+.category-Healthcare { border-left: 4px solid #ffcc99; }
+.category-Other { border-left: 4px solid #cccccc; }
+
+/* Dashboard Styles */
+#dashboard {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Report Styles */
+#report-results {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#category-totals, #account-totals {
+    list-style: none;
+    padding-left: 0;
+}
+
+#category-totals li, #account-totals li {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+#total-expenses {
+    margin-top: 15px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+} 
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Account Management Styles */
+.accounts-list {
+    margin-top: 15px;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.account-item:hover {
+    background-color: #e9ecef;
+}
+
+.delete-account-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-account-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Deposit Report Styles */
+#deposit-report-results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.deposit-category {
+    padding: 5px 10px;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+.deposit-category.Paycheck { background-color: #e3f2fd; }
+.deposit-category.Gift { background-color: #f3e5f5; }
+.deposit-category.Refund { background-color: #e8f5e9; }
+.deposit-category.Other { background-color: #fff3e0; }

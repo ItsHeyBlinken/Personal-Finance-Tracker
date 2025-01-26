@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <button id="refresh-app">Refresh App</button>
+  <h1>Finance Tracker</h1>
+  
+  <!-- Dashboard Section -->
+  <div id="dashboard">
+    <h2>Dashboard</h2>
+    <div class="balance-section">
+      <h3>Account Balances</h3>
+      <p id="total-balance">Total Balance: $0.00</p>
+      <div id="account-balances">
+        <!-- Account balances will be inserted here dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Add this after the Dashboard section -->
+  <div class="transaction-list">
+    <h3>Manage Accounts</h3>
+    <form id="account-form">
+      <div class="form-group">
+        <input type="text" id="new-account-name" placeholder="Account Name" required>
+        <input type="number" id="initial-balance" placeholder="Initial Balance" step="0.01" required>
+        <button type="submit">Add Account</button>
+      </div>
+    </form>
+    <div id="accounts-list" class="accounts-list">
+      <!-- Accounts will be listed here -->
+    </div>
+    <div class="balance-correction">
+        <h4>Balance Correction</h4>
+        <form id="balance-correction-form">
+            <select id="correction-account" required>
+                <!-- Accounts will be populated here -->
+            </select>
+            <input type="number" id="correction-amount" placeholder="Correct Balance" step="0.01" required>
+            <button type="submit">Correct Balance</button>
+        </form>
+    </div>
+  </div>
+
+  <!-- Deposit Section -->
+  <div class="transaction-list">
+    <h3>Deposit Money</h3>
+    <form id="deposit-form">
+      <div class="form-group">
+        <input type="text" id="deposit-description" placeholder="Description" required>
+        <select id="deposit-category">
+          <option value="Paycheck">Paycheck</option>
+          <option value="Gift">Gift</option>
+          <option value="Refund">Refund</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="number" id="deposit-amount" placeholder="Amount" step="0.01" required>
+        <select id="deposit-account">
+          <!-- Will be populated dynamically -->
+        </select>
+        <input type="date" id="deposit-date" required>
+        <button type="submit">Deposit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Transfer Section -->
+  <div class="transaction-list">
+    <h3>Transfer Money</h3>
+    <form id="transfer-form">
+      <div class="form-group">
+        <input type="number" id="transfer-amount" placeholder="Amount" step="0.01" required>
+      </div>
+      <div class="form-group">
+        <label for="transfer-from">From Account:</label>
+        <select id="transfer-from">
+          <!-- Accounts will be populated dynamically -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="transfer-to">To Account:</label>
+        <select id="transfer-to">
+          <!-- Accounts will be populated dynamically -->
+        </select>
+      </div>
+      <button type="submit">Transfer</button>
+    </form>
+  </div>
+
+  <!-- Expenses Section -->
+  <div class="transaction-list">
+    <h3>Add Expense</h3>
+    <form id="expense-form">
+      <input type="text" id="description" placeholder="Description" required>
+      <select id="expense-category">
+        <option value="Housing">Housing</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Dining Out">Dining Out</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+      <select id="category">
+        <!-- Accounts will be populated dynamically -->
+      </select>
+      <input type="date" id="pay-period" required>
+      <button type="submit">Add Expense</button>
+    </form>
+  </div>
+
+  <!-- Recent Expenses List -->
+  <div class="transaction-list">
+    <h4>Recent Expenses (Last 10)</h4>
+    <div class="expense-controls">
+      <select id="expense-filter">
+        <option value="all">All Categories</option>
+        <option value="Housing">Housing</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Dining Out">Dining Out</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <ul id="expense-list" class="expense-list"></ul>
+    <div id="recent-total" class="recent-total">Running Total: $0.00</div>
+  </div>
+
+  <!-- Report Section -->
+  <div class="transaction-list">
+    <h3>Generate Expense Report</h3>
+    <form id="report-form">
+      <div class="form-group">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" required>
+      </div>
+      <div class="form-group">
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" required>
+      </div>
+      <button type="submit">Generate Report</button>
+    </form>
+    
+    <div id="report-results" style="display: none;">
+      <h4>Expense Report</h4>
+      <div id="date-range-display"></div>
+      <h5>Expenses by Category:</h5>
+      <ul id="category-totals"></ul>
+      <h5>Expenses by Account:</h5>
+      <ul id="account-totals"></ul>
+      <div id="total-expenses"></div>
+    </div>
+  </div>
+
+  <!-- Add this for deposit reports -->
+  <div class="transaction-list">
+    <h3>Generate Deposit Report</h3>
+    <form id="deposit-report-form">
+      <div class="form-group">
+        <label for="deposit-start-date">Start Date:</label>
+        <input type="date" id="deposit-start-date" required>
+      </div>
+      <div class="form-group">
+        <label for="deposit-end-date">End Date:</label>
+        <input type="date" id="deposit-end-date" required>
+      </div>
+      <button type="submit">Generate Deposit Report</button>
+    </form>
+    
+    <div id="deposit-report-results" style="display: none;">
+      <h4>Deposit Report</h4>
+      <div id="deposit-date-range-display"></div>
+      <h5>Deposits by Category:</h5>
+      <ul id="deposit-category-totals"></ul>
+      <h5>Deposits by Account:</h5>
+      <ul id="deposit-account-totals"></ul>
+      <div id="total-deposits"></div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
